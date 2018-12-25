@@ -1,5 +1,3 @@
-package basic;
-
 /*
  在Java中被推荐的资源释放方法为，提供显式的具有良好命名的接口方法，
  如 FileInputStream.close() 和 Graphic2D.dispose() 等。
