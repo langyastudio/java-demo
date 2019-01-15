@@ -1,8 +1,6 @@
 package com.test;
 
 import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -37,9 +35,6 @@ public class ServletTest extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setContentType("text/html");
-        resp.setCharacterEncoding("UTF-8");
-
         PrintWriter out = resp.getWriter();
         out.println("<html>");
         out.println("  <head><title>Servlet sample</title></head>");
@@ -48,6 +43,17 @@ public class ServletTest extends HttpServlet {
         out.print(this.getClass());
         out.println("  </body>");
         out.println("</html>");
+
+        String id     = req.getParameter("id");
+        String name   = req.getParameter("name");
+        String author = req.getParameter("author");
+        String price  = req.getParameter("price");
+        out.println("<h2>图书信息添加成功</h2><hr>");
+        out.println("图书编号：" + id + "<br>");
+        out.println("图书名称：" + name + "<br>");
+        out.println("作者：" + author + "<br>");
+        out.println("价格：" + price + "<br>");
+
         out.flush();
         out.close();
     }
