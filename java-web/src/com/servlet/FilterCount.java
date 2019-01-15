@@ -1,4 +1,4 @@
-package com.test;
+package com.servlet;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
@@ -6,6 +6,8 @@ import java.io.IOException;
 
 /**
  * 过滤器 —— 统计访问人数
+ *
+ * 本质上就是拦截客户端与目标资源的请求，进行相关处理
  */
 public class FilterCount implements Filter {
     private int count;

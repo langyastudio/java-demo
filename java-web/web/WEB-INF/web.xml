@@ -6,7 +6,7 @@
     <!--过滤器-->
     <filter>
         <filter-name>FilterCount</filter-name>
-        <filter-class>com.test.FilterCount</filter-class>
+        <filter-class>com.servlet.FilterCount</filter-class>
         <!--过滤器参数-->
         <init-param>
             <param-name>count</param-name>
@@ -19,7 +19,7 @@
     </filter-mapping>
     <filter>
         <filter-name>FilterChar</filter-name>
-        <filter-class>com.test.FilterChar</filter-class>
+        <filter-class>com.servlet.FilterChar</filter-class>
         <!--过滤器参数-->
         <init-param>
             <param-name>encoding</param-name>
@@ -36,7 +36,7 @@
         <!--名称-->
         <servlet-name>ServletTest</servlet-name>
         <!--完整路径-->
-        <servlet-class>com.test.ServletTest</servlet-class>
+        <servlet-class>com.servlet.ServletTest</servlet-class>
     </servlet>
     <servlet-mapping>
         <!--名称-->

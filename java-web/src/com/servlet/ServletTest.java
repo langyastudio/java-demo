@@ -1,4 +1,4 @@
-package com.test;
+package com.servlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,8 +10,16 @@ import java.io.PrintWriter;
 /**
  * Servlet 主要用于处理业务逻辑，封装了对HTTP请求的处理。
  * 由Servlet容器通知相应的对象进行处理，所以需要注册类
- * <p>
+ *
  * HTTPServlet -> GenericServlet -> Servlet + ServletConfig
+ *
+ * Servlet 3.0 新增的：
+ *  1、新增注释替代web.xml配置
+ *  2、对文件上传的支持
+ * @MultipartConfig
+ * 从request对象中获取Part文件对象
+ *  3、异步处理
+ * Servlet、Fiter
  *
  * @author jiangjiaxiong
  * @date 2018/12/29
