@@ -18,7 +18,7 @@
       】位访客！
     </h2><hr>
 
-    <form action="/java_web/test" method="post">
+    <form action="/java_servlet/test" method="post">
         <table align="center" border="1" width="350">
             <tr>
                 <td  class="2" align="center" colspan="2">
