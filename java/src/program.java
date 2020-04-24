@@ -20,32 +20,6 @@ public class program {
      * @param args 参数
      */
     public static void main(String[] args) {
-        //【0】bit move
-        int ba = 0x0001;
-        int bb = 0x0002;
-
-        //| & ^ ~ << >> >>> 等
-        int bc = ba | bb;
-
-        //【1】String
-        String str1 = "123456789";
-        String str2 = "asdfghjkl";
-
-        System.out.println(str1 + " concat " + str2 + ":");
-        System.out.println(str1 + str2); //can replace by concat
-
-        //字符串比较时，不可使用“==”，其用于比较两个字符串的地址。
-        System.out.println(str1 + " compare " + str2 + ":");
-        System.out.println(str1.equalsIgnoreCase(str2));
-
-        //format
-        System.out.printf(String.format("hi, %s", "天霸"));
-        System.out.printf(" %% 字母a的大写是：%c %n", 'A'); //%n表示换行符
-        System.out.printf("8x6 的结果是：%d %n", 8 * 6);
-
-        System.out.printf("8x6 的4位结果是：%04d %n", 8 * 6);
-        System.out.printf("49.8是：%2.2f %n", 49.8);
-
         //日期1
         Date nowDate = new Date();
         System.out.printf("一年中的天数（即年的第几天）：%tj%n", nowDate);
