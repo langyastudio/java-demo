@@ -37,30 +37,6 @@ public class program {
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm::ss EE");
         System.out.println("yyyy-MM-dd HH:mm::ss EE, 系统默认时区" + df.format(nowDate));
 
-        //【2】Array
-        int a[][] = new int[][]{{1, 2, 3}, {2, 3, 4}, {4, 3, 5, 6}}; //二维数组，每一维可以不一样
-
-        /*
-         * Arrays工具类的中的几个常用方法
-         * 1.copyof
-         * 2.toString
-         * 3.equals
-         * 4.sort
-         * 5.fill
-         * 6.binarySearch
-         */
-        Arrays.sort(a[2]);
-        for (int i = 0; i < a.length; i++) {
-            for (int j = 0; j < a[i].length; j++) {
-                System.out.println(a[i][j]);
-            }
-        }
-
-        String strArr[]  = {"北京", "上海", "重庆", "深圳"};
-        String strArr1[] = Arrays.copyOf(strArr, 3);
-        System.out.println(Arrays.toString(strArr));
-        System.out.println(Arrays.toString(strArr1));
-
         //【3】包装类 —— 基本数据类型却是不面向对象的
         Integer in  = 123; //自动拆装箱
         int     ini = in;

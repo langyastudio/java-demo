@@ -46,15 +46,23 @@ public class BasicT {
         System.out.println(-1.0 / 0);
 
         boolean b = 5 > 3;
-        System.out.println(b && (5/0 > 0));
+        //System.out.println(b && (5/0 > 0));
 
         //--------------------------------------------------------------------------------------------------------------
-        // 字符串
+        // 字符与字符串
         //--------------------------------------------------------------------------------------------------------------
-        //【1】String
+        //char
+        char c1 = 'A';
+        char c2 = '中';
+        System.out.println(c1);
+        //Unicode编码
+        System.out.println((int)c1);
+
+        //String
         String str1 = "123456789";
         String str2 = "asdfghjkl";
 
+        System.out.println("abc\"\\bcd\u4e2d");
         System.out.println(str1 + " concat " + str2 + ":");
         System.out.println(str1 + str2); //can replace by concat
 
@@ -69,6 +77,5 @@ public class BasicT {
 
         System.out.printf("8x6 的4位结果是：%04d %n", 8 * 6);
         System.out.printf("49.8是：%2.2f %n", 49.8);
-
     }
 }
