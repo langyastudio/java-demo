@@ -13,7 +13,10 @@ public class ArrayT {
         //new int[]简写
         int []a1 = {1,2,3};
         System.out.println("a1 length: " + a1.length);
-        System.out.println("a1 data 1: " + a1[0]);
+        //for each循环能够遍历所有“可迭代”的数据类型，例如List、Map等
+        for (int item : a1) {
+            System.out.println("a1 的值：" + item);
+        }
 
         //二维数组，每一维可以不一样
         int[][] a = new int[][]{{1, 2, 3}, {2, 3, 4}, {4, 3, 5, 6}};
