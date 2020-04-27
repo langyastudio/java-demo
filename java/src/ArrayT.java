@@ -1,6 +1,3 @@
-import java.math.BigDecimal;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 
@@ -20,6 +17,7 @@ public class ArrayT {
 
         //二维数组，每一维可以不一样
         int[][] a = new int[][]{{1, 2, 3}, {2, 3, 4}, {4, 3, 5, 6}};
+        System.out.println(Arrays.deepToString(a));
 
         /*
          * Arrays工具类的中的几个常用方法
@@ -37,8 +35,8 @@ public class ArrayT {
             }
         }
 
-        String strArr[]  = {"北京", "上海", "重庆", "深圳"};
-        String strArr1[] = Arrays.copyOf(strArr, 3);
+        String[] strArr  = {"北京", "上海", "重庆", "深圳"};
+        String[] strArr1 = Arrays.copyOf(strArr, 3);
         System.out.println(Arrays.toString(strArr));
         System.out.println(Arrays.toString(strArr1));
     }
