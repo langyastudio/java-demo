@@ -1,6 +1,7 @@
 import java.lang.reflect.Array;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
+import java.util.StringJoiner;
 
 public class StringT {
     public static void main(String[] args) {
@@ -56,6 +57,24 @@ public class StringT {
         System.out.println(Arrays.toString(bArr));
         System.out.println(new String(bArr));
 
+        //--------------------------------------------------------------------------------------------------------------
+        // StringBuilder
+        //--------------------------------------------------------------------------------------------------------------
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < 1000; i++) {
+            sb.append(",")
+              .append(i);
+        }
+        System.out.println(sb.toString());
 
+        //--------------------------------------------------------------------------------------------------------------
+        // StringJoiner
+        //--------------------------------------------------------------------------------------------------------------
+        String[] names = {"Bob", "Alice", "Grace"};
+        StringJoiner sj = new StringJoiner(",", "Start ", " end");
+        for (String name : names) {
+            sj.add(name);
+        }
+        System.out.println(sj.toString());
     }
 }

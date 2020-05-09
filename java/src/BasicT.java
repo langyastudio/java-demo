@@ -9,9 +9,17 @@ public class BasicT {
         // 包装类
         //--------------------------------------------------------------------------------------------------------------
         //包装类 —— 基本数据类型是不面向对象的
-        Integer inCls  = 123; //自动拆装箱
+        //自动拆装箱
+        Integer inCls  = 123;
         int     ini = inCls;
         System.out.println("包装类自动拆装箱: " + Integer.parseInt("123456"));
+
+        //进制转换
+        System.out.println("123的二进制: " + Integer.toBinaryString(123));
+        System.out.println("int 最大值" + Integer.MAX_VALUE);
+
+        //unsigned
+        System.out.println(Integer.toUnsignedLong(-123));
 
         //--------------------------------------------------------------------------------------------------------------
         // 整数运算
