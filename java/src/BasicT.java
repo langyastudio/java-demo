@@ -1,3 +1,6 @@
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
+import java.util.Arrays;
 
 public class BasicT {
     /**
@@ -59,5 +62,21 @@ public class BasicT {
 
         boolean b = 5 > 3;
         //System.out.println(b && (5/0 > 0));
+
+        //--------------------------------------------------------------------------------------------------------------
+        // 随机数
+        //--------------------------------------------------------------------------------------------------------------
+        SecureRandom sr = null;
+        try {
+            sr = SecureRandom.getInstanceStrong();
+
+        }catch (NoSuchAlgorithmException e){
+            sr = new SecureRandom();
+        }
+        System.out.println(sr.nextInt(100));
+
+        byte [] bytes = new byte[16];
+        sr.nextBytes(bytes);
+        System.out.println(Arrays.toString(bytes));
     }
 }

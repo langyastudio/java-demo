@@ -1,4 +1,5 @@
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.math.RoundingMode;
 
 
@@ -19,7 +20,7 @@ public class BigT {
         BigDecimal b2 = new BigDecimal(Double.toString(d2));
         System.out.println("BigDecimal 12.59 multiply 56.59: " + (b1.multiply(b2)).doubleValue());
 
-        //默认除法运算精度,即保留小数点多少位
+        //默认除法运算精度,即保留小数点多少位,并四舍五入
         final int DEFAULT_DIV_SCALE = 10;
         System.out.println("BigDecimal 12.59 divide 56.59: " + (b1.divide(b2, DEFAULT_DIV_SCALE, RoundingMode.HALF_UP)).doubleValue());
 
@@ -27,7 +28,12 @@ public class BigT {
         BigDecimal b4 = new BigDecimal("0.1");
         System.out.println("b3 double 0.1: " + b3);
         System.out.println("b4 string 0.1: " + b4);
+        System.out.println("b4 string scale: " + b4.scale());
         System.out.println("b3 equals b4:  " + (b3.equals(b4)));
         System.out.println("b3 compareTo b4:  " + (b3.compareTo(b4)));
+
+
+        BigInteger i1 = new BigInteger("123456789000");
+        System.out.println(i1.multiply(i1).longValueExact());
     }
 }
