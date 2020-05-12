@@ -8,6 +8,7 @@ public class ExceptionT {
             int a = Integer.parseInt("abc");
 
         } catch (NumberFormatException e) {
+            e.printStackTrace();
             throw new RuntimeException(e);
 
         } finally {
