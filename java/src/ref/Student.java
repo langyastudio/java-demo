@@ -1,7 +1,10 @@
 package ref;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
+import java.util.Arrays;
 
 public class Student extends Person {
     public int score;
@@ -14,12 +17,22 @@ public class Student extends Person {
         this.grade = grade;
     }
 
+    public void setScore(int score)
+    {
+        this.score = score;
+    }
+
+    public void setGrade(int grade)
+    {
+        this.grade = grade;
+    }
+
     public static void main(String[] args) {
         try
         {
             Class stdCls = Student.class;
 
-            //get Field
+            //【1】get Field
             Field name  = stdCls.getField("name");
             Field score = stdCls.getField("score");
             Field grade = stdCls.getDeclaredField("grade");
@@ -42,15 +55,43 @@ public class Student extends Person {
             //get field value
             System.out.println(score.get(stuInstans));
 
-        }
-        catch (IllegalArgumentException | IllegalAccessException e)
-        {
-            e.printStackTrace();
-        }
-        catch (NoSuchFieldException | SecurityException e)
-        {
-            e.printStackTrace();
-        }
 
+            //【2】get method
+            //获取public方法setScore，参数为int
+            Method setScore = stdCls.getMethod("setScore", int.class);
+
+            //method info
+            System.out.println(setScore.getName());
+            System.out.println(setScore.getReturnType());
+            System.out.println(Arrays.toString(setScore.getParameterTypes()));
+
+            //invoke
+            setScore.invoke(stuInstans, 80);
+            System.out.println(stuInstans.score);
+
+            //【3】constructor
+            Constructor cons1 = stdCls.getConstructor(int.class, int.class);
+            Student cons1Instanst = (Student) cons1.newInstance(20, 12);
+            System.out.println(cons1Instanst.score);
+
+            //【4】继承关系
+            Class i = stdCls.getSuperclass();
+            System.out.println(i);
+
+            //只返回当前类直接实现的接口类型，并不包括其父类实现的接口类型
+            Class[] is = Integer.class.getInterfaces();
+            for (Class ix:is)
+            {
+                System.out.println(ix);
+            }
+        }
+        catch (RuntimeException e )
+        {
+            e.printStackTrace();
+        }
+        catch (ReflectiveOperationException  e)
+        {
+            e.printStackTrace();
+        }
     }
 }
