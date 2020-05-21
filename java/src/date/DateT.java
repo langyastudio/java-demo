@@ -5,6 +5,9 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
 
+/**
+ * old Date
+ */
 public class DateT {
     public static void main(String[] args) {
         //Date不能转换时区、运算
@@ -30,6 +33,7 @@ public class DateT {
         calendar.clear();
         calendar.setTimeZone(TimeZone.getTimeZone("GMT+00:00"));
         calendar.set(Calendar.MONTH, 6);
+        calendar.add(Calendar.MONTH, -1);
         calendar.set(2020, Calendar.MAY, 21, 6, 21, 18);
 
         System.out.println(calendar.getTime().toLocaleString());
