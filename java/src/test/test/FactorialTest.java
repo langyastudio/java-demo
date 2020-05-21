@@ -4,16 +4,40 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.MethodSource;
 import test.Factorial;
+
+import java.util.List;
 
 class FactorialTest {
 
     @Test
-    void testFact() {
+    void Fact() {
+        //Equal
         Assertions.assertEquals(1, Factorial.fact(1));
-        assertEquals(2, Factorial.fact(2));
-        assertEquals(6, Factorial.fact(3));
-        assertEquals(3628801, Factorial.fact(10));
-        assertEquals(2432902008176640000L, Factorial.fact(20));
+        //Assertions.assertEquals(3628801, Factorial.fact(10));
+
+        //Throw
+        Assertions.assertThrows(IllegalArgumentException.class, ()->{
+           Factorial.fact(-1);
+        });
+
+    }
+
+    @ParameterizedTest
+    //@MethodSource
+    @CsvSource({"abc, AbC", "APPLE, Apple", "gooD, Good"})
+    void capitalize(String input, String result) {
+        assertEquals(result, Factorial.capitalize(input));
+    }
+
+    static List<Arguments> capitalize() {
+        return List.of( // arguments:
+                        Arguments.arguments("abc", "Abc"), //
+                        Arguments.arguments("APPLE", "Apple"), //
+                        Arguments.arguments("gooD", "Good"));
     }
 }
