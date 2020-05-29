@@ -9,7 +9,7 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * 线程安全
  */
-public class TaskQueueCls2 {
+public class TaskQueueReentrantCls {
     private       Queue<String> queue     = new LinkedList<>();
     private final Lock          lock      = new ReentrantLock();
     private final Condition     condition = lock.newCondition();
@@ -30,7 +30,6 @@ public class TaskQueueCls2 {
 
     public synchronized String get() throws InterruptedException {
         lock.lock();
-
         try {
             while (queue.isEmpty()) {
                 condition.await();
