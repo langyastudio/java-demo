@@ -5,7 +5,7 @@ package thread;
  */
 public class CreateT {
     public static void main(String[] args) throws InterruptedException{
-        Thread t = new Thread(new RunnableCls());
+        Thread t = new Thread(new RunnableCls("test"));
 
         // 启动新线程
         t.start();
