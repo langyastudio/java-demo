@@ -1,3 +1,5 @@
 .idea/
-out/
-java/target/
+*.iml
+java/base/target/
+java/web/target/
+java/log/
