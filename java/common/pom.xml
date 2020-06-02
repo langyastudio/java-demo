@@ -11,6 +11,42 @@
     <version>1.0</version>
     <packaging>pom</packaging>
 
+    <distributionManagement>
+        <repository>
+            <id>local-repo-release</id>
+            <name>release</name>
+            <url>file://${project.basedir}/../maven-repo/</url>
+        </repository>
+    </distributionManagement>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
     <properties>
         <!--jdk版本-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
