@@ -1,4 +1,4 @@
-package network;
+package network.tcp;
 
 import java.io.*;
 import java.net.Socket;
@@ -25,6 +25,7 @@ public class SocketClient {
         var writer = new BufferedWriter(new OutputStreamWriter(output, StandardCharsets.UTF_8));
 
         System.out.println("server:" + reader.readLine());
+
         Scanner scanner = new Scanner(System.in);
         for (;;){
             String s = scanner.nextLine();

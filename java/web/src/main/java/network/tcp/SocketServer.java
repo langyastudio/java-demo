@@ -1,4 +1,4 @@
-package network;
+package network.tcp;
 
 import java.io.*;
 import java.net.ServerSocket;
@@ -22,7 +22,7 @@ public class SocketServer {
 }
 
 class ServerHandler extends Thread {
-    private Socket ss;
+    private final Socket ss;
 
     public ServerHandler(Socket ss) {
         this.ss = ss;
@@ -54,7 +54,6 @@ class ServerHandler extends Thread {
         writer.write("hello\n"); writer.flush();
         for (; ; ) {
             String s = reader.readLine();
-
             System.out.println(s);
 
             //退出
