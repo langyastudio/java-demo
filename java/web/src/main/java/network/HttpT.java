@@ -31,7 +31,7 @@ public class HttpT {
                 System.out.println(headers.get(key).get(0));
             }
 
-            System.out.println(response.body());
+            System.out.println(response.body().substring(0, 1024) + "...");
         }catch (Exception e){
             e.printStackTrace();
         }
