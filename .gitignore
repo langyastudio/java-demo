@@ -2,5 +2,6 @@
 *.iml
 java/base/target/
 java/web/target/
+java/design/target/
 java/log/
 java/maven-repo/
