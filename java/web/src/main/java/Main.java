@@ -1,5 +1,3 @@
-package servlet;
-
 import org.apache.catalina.Context;
 import org.apache.catalina.WebResourceRoot;
 import org.apache.catalina.startup.Tomcat;
@@ -12,14 +10,15 @@ public class Main {
     public static void main(String[] args) throws Exception {
         //启动Tomcat
         Tomcat tomcat = new Tomcat();
-        tomcat.setPort(Integer.getInteger("port", 8080));
+        tomcat.setPort(Integer.getInteger("port", 88));
         tomcat.getConnector();
 
         //创建webapp
-        Context         ctx       = tomcat.addWebapp("", new File("src/main/webapp").getAbsolutePath());
+        Context         ctx       = tomcat.addWebapp("", new File("web/src/main/webapp").getAbsolutePath());
         WebResourceRoot resources = new StandardRoot(ctx);
         resources.addPreResources(
-                new DirResourceSet(resources, "/WEB-INF/classes", new File("target/classes").getAbsolutePath(), "/"));
+                new DirResourceSet(resources, "/WEB-INF/classes", new File("web/target/classes").getAbsolutePath(),
+                                   "/"));
         ctx.setResources(resources);
 
         tomcat.start();
