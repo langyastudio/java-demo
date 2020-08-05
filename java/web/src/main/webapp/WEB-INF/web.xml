@@ -3,4 +3,15 @@
         "http://java.sun.com/dtd/web-app_2_3.dtd">
 <web-app>
     <display-name>Archetype Created Web Application</display-name>
+
+    <!-- 过滤顺序：谁的写在上面，谁先被过滤 -->
+    <filter-mapping>
+        <filter-name>LogFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>EncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
 </web-app>
