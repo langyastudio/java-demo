@@ -3,6 +3,7 @@
 java/base/target/
 java/web/target/
 java/design/target/
+java/spring-demo/target/
 java/log/
 java/maven-repo/
 java/tomcat.88/
