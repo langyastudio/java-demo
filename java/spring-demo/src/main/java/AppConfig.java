@@ -9,7 +9,8 @@ import service.UserService;
  * @author hk
  */
 @Configuration
-@ComponentScan
+//value用于指定要扫描的package
+@ComponentScan(value = "service")
 public class AppConfig {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
