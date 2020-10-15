@@ -1,3 +1,4 @@
+import ioc.App;
 import ioc.list.HValidators;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
@@ -10,6 +11,7 @@ import java.time.ZoneId;
 @Configuration
 //value用于指定要扫描的package
 @ComponentScan(value = "ioc")
+@PropertySource("app.properties")
 public class AppConfig {
     /**
      * 第三方Bean
@@ -35,5 +37,8 @@ public class AppConfig {
         //list
         HValidators hValidators = context.getBean(HValidators.class);
         hValidators.validate("1032030048@qq.com", "12");
+
+        App app = context.getBean(App.class);
+        System.out.println("reading from property source" + app.getDescription());
     }
 }
