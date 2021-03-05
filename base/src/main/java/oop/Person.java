@@ -1,4 +1,4 @@
-package cls;
+package oop;
 
 public class Person {
     protected int      age;

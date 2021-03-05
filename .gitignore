@@ -1,9 +1,9 @@
 .idea/
 *.iml
-java/base/target/
-java/web/target/
-java/design/target/
-java/spring-demo/target/
-java/log/
-java/maven-repo/
-java/tomcat.88/
+base/target/
+web/target/
+design/target/
+spring-demo/target/
+log/
+maven-repo/
+tomcat.88/
