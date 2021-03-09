@@ -3,6 +3,7 @@ package introduction;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.Arrays;
+import java.util.Random;
 
 public class BasicT {
     /**
@@ -68,6 +69,11 @@ public class BasicT {
         //--------------------------------------------------------------------------------------------------------------
         // 随机数
         //--------------------------------------------------------------------------------------------------------------
+        //伪随机数
+        //给定一个初始的种子，产生的随机数序列是完全一样的
+        Random random = new Random(123456);
+        System.out.println(random.nextInt(100));
+
         SecureRandom sr = null;
         try {
             sr = SecureRandom.getInstanceStrong();
